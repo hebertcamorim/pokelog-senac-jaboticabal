@@ -28,11 +28,11 @@ Este projeto foi criado com fins didáticos para demonstrar:
 
 1. Clone este repositório:
 
-git clone [https://github.com/seu-usuario/pokelog.git](https://github.com/hebertcamorim/pokelog-senac-jaboticabal)
+- git clone [https://github.com/seu-usuario/pokelog.git](https://github.com/hebertcamorim/pokelog-senac-jaboticabal)
 
 2. Execute o arquivo principal diretamente com o Python:
 
-python app.py
+- python app.py
 
 ## 🔗 Endpoints Disponíveis
 
@@ -60,6 +60,4 @@ python app.py
   "abilities": ["blaze", "solar-power"],
   "sprite": "https://raw.githubusercontent.com/PokeAPI/..."
 }
-
-git clone https://github.com/seu-usuario/pokelog.gitithub.com/seu-usuario/pokelog.git
-cd pokelog
+```
