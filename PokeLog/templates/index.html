@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>PokeLog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f0f4f8;
+      color: #333;
+      border-radius: 10px;
+    }
+    h1 { text-align: center; }
+    form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .buscar { background: #4CAF50; color: white; }
+    .limpar { background: #ccc; color: #000; }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    img {
+      margin-top: 1rem;
+      width: 120px;
+      height: 120px;
+    }
+    .info { margin: 0.5rem 0; }
+    code { background: #eee; padding: 0.2rem 0.4rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>🔍 PokeLog</h1>
+
+  <form method="POST">
+    <input type="text" name="nome" placeholder="Nome ou número" required />
+    <button type="submit" class="buscar">Pesquisar</button>
+    <button type="button" class="limpar" onclick="window.location.href='/'">Limpar</button>
+  </form>
+
+  {% if pokemon == "erro" %}
+    <p style="color:red;">⚠️ Pokémon não encontrado.</p>
+  {% elif pokemon %}
+    <div class="card">
+      <h2>{{ pokemon.nome | capitalize }}</h2>
+      <img src="{{ pokemon.sprite }}" alt="Imagem de {{ pokemon.nome }}" />
+      <div class="info"><strong>ID:</strong> {{ pokemon.id }}</div>
+      <div class="info"><strong>Tipos:</strong> {{ pokemon.tipos | join(', ') }}</div>
+      <div class="info"><strong>Habilidades:</strong> {{ pokemon.habilidades | join(', ') }}</div>
+      <div class="info"><strong>Endpoint:</strong> <code>{{ endpoint }}</code></div>
+    </div>
+  {% endif %}
+</body>
+</html>
